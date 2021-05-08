@@ -913,7 +913,10 @@ class NapalmForm(ConnectionForm):
     get_request_allowed = False
     abstract_service = True
     driver = SelectField(choices=vs.napalm_drivers)
-    use_device_driver = BooleanField(default=True)
+    use_device_driver = BooleanField(
+        default=True,
+        help="napalm/use_device_driver",
+    ))
     timeout = IntegerField(default=10)
     optional_args = DictField()
     groups = {
@@ -929,7 +932,10 @@ class NetmikoForm(ConnectionForm):
     form_type = HiddenField(default="netmiko")
     abstract_service = True
     driver = SelectField(choices=vs.netmiko_drivers)
-    use_device_driver = BooleanField(default=True)
+    use_device_driver = BooleanField(
+        default=True,
+        help="netmiko/use_device_driver",
+    )
     enable_mode = BooleanField(
         "Enable mode (run in enable mode or as root)", default=True
     )
