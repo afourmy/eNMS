@@ -52,7 +52,8 @@ class AutomationController(BaseController):
     SCRAPLI_DRIVERS = CORE_PLATFORM_MAP
 
     connections_cache = {
-        library: defaultdict(dict) for library in ("netmiko", "napalm", "scrapli")
+        library: defaultdict(dict)
+        for library in ("netmiko", "napalm", "scrapli", "ncclient")
     }
     service_db = defaultdict(lambda: {"runs": 0})
     run_db = defaultdict(dict)
